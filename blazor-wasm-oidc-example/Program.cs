@@ -23,7 +23,7 @@ namespace blazor_wasm_oidc_example
             {
                 // Configure your authentication provider options here.
                 // For more information, see https://aka.ms/blazor-standalone-auth
-                builder.Configuration.Bind("Local", options.ProviderOptions);
+                builder.Configuration.Bind("LocalGoogle", options.ProviderOptions);
             });
 
             await builder.Build().RunAsync();
