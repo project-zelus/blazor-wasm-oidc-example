@@ -21,9 +21,10 @@ namespace blazor_wasm_oidc_example
 
             builder.Services.AddOidcAuthentication(options =>
             {
+                var configOption = builder.Configuration["OIDCConfig"];
                 // Configure your authentication provider options here.
                 // For more information, see https://aka.ms/blazor-standalone-auth
-                builder.Configuration.Bind("LocalGoogle", options.ProviderOptions);
+                builder.Configuration.Bind(configOption, options.ProviderOptions);
             });
 
             await builder.Build().RunAsync();
