@@ -1,0 +1,66 @@
+{
+    "issuer": "https://federation.dev.cce.af.mil/oidc/spectre-localhost-5001",
+    "authorization_endpoint": "https://federation.dev.cce.af.mil/sso/authenticate",
+    "token_endpoint": "https://federation.dev.cce.af.mil/oidc/spectre-localhost-5001/token",
+    "jwks_uri": "https://federation.dev.cce.af.mil/oidc/spectre-localhost-5001/keys",
+    "scopes_supported": [
+        "openid"
+    ],
+    "response_types_supported": [
+        "id_token",
+        "id_token token",
+        "code",
+        "code token",
+        "code id_token",
+        "code id_token token"
+    ],
+    "response_modes_supported": [
+        "query",
+        "fragment",
+        "form_post"
+    ],
+    "token_endpoint_auth_methods_supported": [
+        "client_secret_basic",
+        "client_secret_post"
+    ],
+    "subject_types_supported": [
+        "public"
+    ],
+    "id_token_signing_alg_values_supported": [
+        "RS256"
+    ],
+    "claim_types_supported": [
+        "normal"
+    ],
+    "claims_supported": [
+        "iss",
+        "sub",
+        "aud",
+        "exp",
+        "iat",
+        "name",
+        "variable_name",
+        "created_at",
+        "updated_at",
+        "token_id",
+        "both_responses",
+        "id_token_response",
+        "user_info_response",
+        "iv_groups",
+        "cert_issuer",
+        "subject",
+        "edipi",
+        "cert_date",
+        "cert_expiration",
+        "cert_fingerprint",
+        "common_name",
+        "upn",
+        "email",
+        "givenname",
+        "surname"
+    ],
+    "code_challenge_methods_supported": [
+        "plain",
+        "S256"
+    ]
+}
