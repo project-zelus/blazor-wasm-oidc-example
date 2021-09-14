@@ -6,7 +6,16 @@
 
 <AuthorizeView>
     <Authorized>
-        Hello, @context.User.Identity.Name!
+        Hello,&nbsp;
+        @if (context.User.Claims.Where(x => x.Type == "givenname").Any())
+        {
+            <span>@context.User.Claims.Where(x => x.Type == "givenname").First().Value&nbsp;</span>
+        }
+        @if (context.User.Claims.Where(x => x.Type == "surname").Any())
+        {
+            <span>@context.User.Claims.Where(x => x.Type == "surname").First().Value</span>
+        }
+
         <button class="nav-link btn btn-link" @onclick="BeginSignOut">Log out</button>
     </Authorized>
     <NotAuthorized>

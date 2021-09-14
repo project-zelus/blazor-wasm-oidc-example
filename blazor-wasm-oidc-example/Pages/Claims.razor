@@ -1,0 +1,27 @@
+﻿@using Microsoft.AspNetCore.Components.Authorization
+
+@page "/claims"
+
+<h3>Claims</h3>
+
+<AuthorizeView>
+    <Authorized>
+        Count: @context.User.Claims.Count()<br />
+        <table border="1">
+            <tr>
+                <th>Claim Type</th>
+                <th>Value</th>
+            </tr>
+            @for (int i = 0; i < @context.User.Claims.Count(); i++)
+            {
+                <tr>
+                    <td>@context.User.Claims.ToList()[i].Type</td>
+                    <td>@context.User.Claims.ToList()[i].Value</td>
+                </tr>
+            }
+        </table>
+    </Authorized>
+    <NotAuthorized>
+        <a href="authentication/login">Not Authenticated</a>
+    </NotAuthorized>
+</AuthorizeView>
